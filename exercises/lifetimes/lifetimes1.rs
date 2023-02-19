@@ -9,7 +9,7 @@
 
 // I AM NOT DONE
 
-fn longest(x: &str, y: &str) -> &str {
+fn longest<'same>(x: &'same str, y: &'same str) -> &'same str {
     if x.len() > y.len() {
         x
     } else {

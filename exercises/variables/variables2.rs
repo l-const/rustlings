@@ -4,7 +4,7 @@
 // I AM NOT DONE
 
 fn main() {
-    let x;
+    let x: i32 = i32::default();
     if x == 10 {
         println!("x is ten!");
     } else {

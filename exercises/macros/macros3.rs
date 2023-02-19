@@ -4,7 +4,9 @@
 
 // I AM NOT DONE
 
+
 mod macros {
+    #[macro_export]
     macro_rules! my_macro {
         () => {
             println!("Check out my macro!");
@@ -13,5 +15,5 @@ mod macros {
 }
 
 fn main() {
-    my_macro!();
+    crate::my_macro!();
 }

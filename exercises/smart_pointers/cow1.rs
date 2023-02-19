@@ -45,6 +45,9 @@ mod tests {
         let mut input = Cow::from(&slice[..]);
         match abs_all(&mut input) {
             // TODO
+            Cow::Owned(_) => Err(("Expected refrenced value")),
+            Cow::Borrowed(_) => Ok(()),
+            
         }
     }
 
@@ -57,8 +60,12 @@ mod tests {
         let mut input = Cow::from(slice);
         match abs_all(&mut input) {
             // TODO
+            Cow::Owned(_) => Ok(()),
+            Cow::Borrowed(_) => Err("Error "),
+            
         }
     }
+    
 
     #[test]
     fn owned_mutation() -> Result<(), &'static str> {
@@ -69,6 +76,9 @@ mod tests {
         let mut input = Cow::from(slice);
         match abs_all(&mut input) {
             // TODO
+            Cow::Owned(_) => Ok(()),
+            Cow::Borrowed(_) => Err("Error "),
         }
     }
+
 }
